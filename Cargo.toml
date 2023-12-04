@@ -1,0 +1,21 @@
+[package]
+edition = "2021"
+name = "celestial-hub_orions-belt"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi = { version = "2.14.1", default-features = false, features = [
+  "napi9",
+  "anyhow",
+] }
+napi-derive = "2.14.2"
+compass = { version = "0.1.0", path = "../compass" }
+
+[build-dependencies]
+napi-build = "2.0.1"
+
+[profile.release]
+lto = true
