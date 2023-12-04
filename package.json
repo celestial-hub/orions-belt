@@ -32,12 +32,18 @@
     "version": "napi version"
   },
   "packageManager": "yarn@4.0.2",
-  "repository": "https://github.com/celestial-hub/orions-belt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celestial-hub/orions-belt.git"
+  },
   "bugs": {
     "url": "https://github.com/celestial-hub/orions-belt/issues"
   },
   "publishConfig": {
     "access": "public"
   },
-  "author": "Daniel Boll <danielboll.dev@proton.me>"
+  "author": "Daniel Boll <danielboll.dev@proton.me>",
+  "optionalDependencies": {
+    "@celestial-hub/orions-belt-linux-x64-gnu": "0.0.5"
+  }
 }
