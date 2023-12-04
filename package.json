@@ -42,8 +42,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Daniel Boll <danielboll.dev@proton.me>",
-  "optionalDependencies": {
-    "@celestial-hub/orions-belt-linux-x64-gnu": "0.0.5"
-  }
+  "author": "Daniel Boll <danielboll.dev@proton.me>"
 }
