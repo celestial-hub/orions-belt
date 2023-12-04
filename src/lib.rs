@@ -1,6 +1,6 @@
 #![deny(clippy::all)]
 
-use compass::{codegen::Codegen, lexer::Lexer, parser::Parser};
+use celestial_hub_compass::{codegen::Codegen, lexer::Lexer, parser::Parser};
 
 #[macro_use]
 extern crate napi_derive;
@@ -16,5 +16,5 @@ pub fn transpile_to(source: String) -> napi::Result<String> {
     )
   })?;
 
-  Ok(compass::codegen::mips::MipsCodegen.generate(ast))
+  Ok(celestial_hub_compass::codegen::mips::MipsCodegen.generate(ast))
 }
