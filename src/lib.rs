@@ -16,5 +16,14 @@ pub fn transpile_to(source: String) -> napi::Result<String> {
     )
   })?;
 
-  Ok(celestial_hub_compass::codegen::mips::MipsCodegen.generate(ast))
+  let result = celestial_hub_compass::codegen::mips::MipsCodegen
+    .generate(ast)
+    .map_err(|err| {
+      napi::Error::new(
+        napi::Status::GenericFailure,
+        format!("Failed to generate code: {}", err),
+      )
+    })?;
+
+  Ok(result)
 }
