@@ -252,6 +252,7 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { transpileTo } = nativeBinding
+const { transpileTo, mipsAst } = nativeBinding
 
 module.exports.transpileTo = transpileTo
+module.exports.mipsAst = mipsAst

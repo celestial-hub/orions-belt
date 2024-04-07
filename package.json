@@ -15,7 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "^2.16.3",
-    "ava": "^5.1.1"
+    "ava": "^5.1.1",
+    "tsx": "^4.7.2"
   },
   "ava": {
     "timeout": "3m"
@@ -42,5 +43,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Daniel Boll <danielboll.dev@proton.me>"
+  "author": "Daniel Boll <danielboll.dev@proton.me>",
+  "optionalDependencies": {
+    "@celestial-hub/orions-belt-linux-x64-gnu": "0.0.13"
+  }
 }

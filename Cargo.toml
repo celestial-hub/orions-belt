@@ -7,12 +7,16 @@ version = "0.0.0"
 crate-type = ["cdylib"]
 
 [dependencies]
-napi = { version = "2.14.1", default-features = false, features = [
+napi = { version = "2.16.1", default-features = false, features = [
+  "serde-json",
   "napi9",
   "anyhow",
 ] }
 napi-derive = "2.14.2"
 celestial-hub-compass = "0.1"
+celestial-hub-astrolabe = "0.1"
+# celestial-hub-astrolabe = { version = "0.1", path = "../astrolabe/" }
+
 [build-dependencies]
 napi-build = "2.1.0"
 
