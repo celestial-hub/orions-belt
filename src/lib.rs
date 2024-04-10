@@ -21,7 +21,7 @@ pub fn transpile_to(source: String) -> napi::Result<String> {
     })?;
 
   celestial_hub_compass::codegen::mips::MipsCodegen
-    .generate(ast)
+    .generate(ast, &mut Default::default())
     .map_err(|err| {
       napi::Error::new(
         napi::Status::GenericFailure,
