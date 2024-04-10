@@ -4,7 +4,6 @@ export type InstructionKind =
 	| "syscall"
 	| "move"
 	| "jal"
-	| "beq"
 	| "sub"
 	| "add"
 	| "jr"
@@ -12,7 +11,19 @@ export type InstructionKind =
 	| "andi"
 	| "j"
 	| "sw"
-	| "lw";
+	| "lw"
+	| "slt"
+	| "beqz"
+	| "bltz"
+	| "bgtz"
+	| "blez"
+	| "bgez"
+	| "blt"
+	| "bgt"
+	| "ble"
+	| "bge"
+	| "beq"
+	| "bne";
 
 export type Type = "Asciiz";
 
