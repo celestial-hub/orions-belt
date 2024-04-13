@@ -13,7 +13,13 @@ export type InstructionKind =
 	| "sw"
 	| "lw"
 	| "slt"
+	| "sle"
+	| "sgt"
+	| "sge"
+	| "seq"
+	| "sne"
 	| "beqz"
+	| "bnez"
 	| "bltz"
 	| "bgtz"
 	| "blez"
@@ -25,9 +31,9 @@ export type InstructionKind =
 	| "beq"
 	| "bne";
 
-export type Type = "Asciiz";
+export type Type = "Asciiz" | "Space";
 
-export type ValueKind = "string";
+export type ValueKind = "string" | "bytes";
 
 export interface Program {
 	dataSection: DataSection;
@@ -73,4 +79,6 @@ export type Operand =
 	| { kind: "register"; value: Register }
 	| { kind: "label"; value: string };
 
-export type Value = { kind: "string"; value: string };
+export type Value =
+	| { kind: "string"; value: string }
+	| { kind: "bytes"; value: number };
