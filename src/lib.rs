@@ -11,14 +11,19 @@ extern crate napi_derive;
 
 #[napi]
 pub fn transpile_to(source: String) -> napi::Result<String> {
-  let ast = CompassParser::new()
-    .parse(CompassLexer::new(&source, "horizon"))
-    .map_err(|err| {
-      napi::Error::new(
-        napi::Status::GenericFailure,
-        format!("Failed to parse source code: {}", err),
-      )
-    })?;
+  let lexer = CompassLexer::new(&source, "horizon").map_err(|err| {
+    napi::Error::new(
+      napi::Status::GenericFailure,
+      format!("Failed to lex source code: {}", err),
+    )
+  })?;
+
+  let ast = CompassParser::new().parse(lexer).map_err(|err| {
+    napi::Error::new(
+      napi::Status::GenericFailure,
+      format!("Failed to parse source code: {}", err),
+    )
+  })?;
 
   celestial_hub_compass::codegen::mips::MipsCodegen
     .generate(ast, &mut Default::default())
