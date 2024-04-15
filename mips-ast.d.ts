@@ -6,6 +6,8 @@ export type InstructionKind =
 	| "jal"
 	| "sub"
 	| "add"
+	| "div"
+	| "mul"
 	| "jr"
 	| "addi"
 	| "andi"
