@@ -2,6 +2,7 @@ export type InstructionKind =
 	| "li"
 	| "la"
 	| "syscall"
+	| "halt"
 	| "move"
 	| "jal"
 	| "sub"
